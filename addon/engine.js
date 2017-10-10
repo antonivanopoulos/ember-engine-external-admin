@@ -6,7 +6,13 @@ import config from './config/environment';
 const { modulePrefix } = config;
 const Eng = Engine.extend({
   modulePrefix,
-  Resolver
+  Resolver,
+  dependencies: {
+    externalRoutes: [
+      'home',
+      'blog'
+    ]
+  }
 });
 
 loadInitializers(Eng, modulePrefix);
